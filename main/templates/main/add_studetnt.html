@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dodaj studenta</title>
+    <style>
+        input {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<form method="post">
+
+    <label>
+        <strong>Nazwa:</strong>
+        <input type="text" name="name" value="Name">
+    </label>
+
+    <label>
+        <strong>Rok studiów:</strong>
+        <input type="number" min="1" step="1" max="99" name="year_at_university" value="1">
+    </label>
+
+    <label>
+        <strong>Jest aktywny:</strong>
+        <input type="checkbox" name="is_active" checked="">
+    </label>
+
+    <label>
+        <input type="submit" value="Dodaj">
+    </label>
+
+    {% csrf_token %}
+</form>
+</body>
+</html>

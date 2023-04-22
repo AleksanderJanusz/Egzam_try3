@@ -16,7 +16,19 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from main import views as main_views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', main_views.main_views, name='main'),
+    path('lecture_details/<int:lecture_id>/', main_views.lecture),
+    path('set_username/<name>/', main_views.set_user),
+    path('say_hello/<int:number>/', main_views.hello),
+    path('say_hello/', main_views.hello_),
+    path('create_cookie/<cookie_name>/<cookie_value>/<int:cookie_time>/', main_views.create_cookie),
+    path('delete_cookie/<cookie_name>/', main_views.delete_cookie),
+    path('add_student/', main_views.AddStudent.as_view()),
+
+
+
 ]
